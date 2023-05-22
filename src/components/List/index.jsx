@@ -1,19 +1,56 @@
 import React, { Component } from 'react'
-import Item from '../Item'
 import './index.css'
+
 export default class List extends Component {
   render() {
-    const {todos,updateTodos,deleteTodos} = this.props
     return (
-      <div>
-           <ul className="todo-main">
-             {
-                todos.map(todo => {
-                   return <Item {...todo} key={todo.id} updateTodos={updateTodos} deleteTodos={deleteTodos}></Item>
-                })
-             }
-          </ul>
+      <div className="row">
+      <div className="card">
+        <a rel='noreferrer' href="https://github.com/reactjs" target="_blank">
+          <img
+            src="https://avatars.githubusercontent.com/u/6412038?v=3" alt="head_pic"
+            style={{width:'100px'}}
+          />
+        </a>
+        <p className="card-text">reactjs</p>
       </div>
+      <div className="card">
+        <a rel='noreferrer' href="https://github.com/reactjs" target="_blank">
+          <img
+            src="https://avatars.githubusercontent.com/u/6412038?v=3" alt="head_pic"
+            style={{width:'100px'}}
+          />
+        </a>
+        <p className="card-text">reactjs</p>
+      </div>
+      <div className="card">
+        <a rel='noreferrer' href="https://github.com/reactjs" target="_blank">
+          <img
+            src="https://avatars.githubusercontent.com/u/6412038?v=3" alt="head_pic"
+            style={{width:'100px'}}
+          />
+        </a>
+        <p className="card-text">reactjs</p>
+      </div>
+      <div className="card">
+        <a rel='noreferrer' href="https://github.com/reactjs" target="_blank">
+          <img
+            src="https://avatars.githubusercontent.com/u/6412038?v=3" alt="head_pic"
+            style={{width:'100px'}}
+          />
+        </a>
+        <p className="card-text">reactjs</p>
+      </div>
+      <div className="card">
+        <a rel='noreferrer' href="https://github.com/reactjs" target="_blank">
+          <img
+            src="https://avatars.githubusercontent.com/u/6412038?v=3" alt="head_pic"
+            style={{width:'100px'}}
+          />
+        </a>
+        <p className="card-text">reactjs</p>
+      </div>
+    </div>
     )
   }
 }
