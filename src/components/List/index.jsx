@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'  
 import './index.css'
 
 export default class List extends Component {
@@ -13,6 +14,19 @@ export default class List extends Component {
     });
     console.log(imgUrl, "imgUrl");
     
+
+    //订阅(接收信息)
+  const token =   PubSub.subscribe('accept',(_,data)=>{
+      console.log(data,"@data");
+    })
+    
+    //取消订阅（避免不必要的通知）
+  //   return () => {
+  //     PubSub.unsubscribe(token);
+  //   };
+  // }, []);
+
+
     return (
       <div>
         

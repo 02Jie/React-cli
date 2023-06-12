@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'
 import axios from 'axios'
 
 export default class Search extends Component {
@@ -8,12 +9,12 @@ export default class Search extends Component {
   }
    //搜索
   handleSearch = () => { 
-     console.log(this.keyWordElement, "@@@");
      const { keyWordElement: { value: data} } = this    //value:data 表示value重新命名为data
     const { handleData } = this.props
+    //发布（发送信息）
+    PubSub.publish('accept',handleData)
     //  axios.get(`http://localhost:5000/search/users?q=${data}`).then(res => { 
       axios.get(`https://api.github.com/search/users?q=${data}`).then(res => { 
-        console.log(res.data.items, "res===");
           //接收数据
           handleData(res.data.items)
          
@@ -21,6 +22,9 @@ export default class Search extends Component {
        alert('请求出错')
      })
   }
+
+  
+   
 
   render() {
     return (
