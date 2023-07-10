@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {NavLink,Route,Redirect} from 'react-router-dom'
+import {NavLink,Route} from 'react-router-dom'
 import About from "./pages/About";
 import Home from "./pages/Home";
 import MyNavLink from "./components/MyNavLink";
@@ -22,7 +22,6 @@ export default class App extends Component {
           <NavLink activeClassName='demo' to='/home'>我是home</NavLink> */}
           <MyNavLink to="/about" children="about"/> 
           <MyNavLink to="/home" children="home"/> 
-          <Redirect to="/about"/>
         </div>
       </div>
       <div className="col-xs-6">

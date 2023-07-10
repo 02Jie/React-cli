@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import {NavLink,Route,Redirect} from 'react-router-dom'
+import {NavLink,Route} from 'react-router-dom'
 import About from "./pages/About";
 import Home from "./pages/Home";
-import MyNavLink from "./components/MyNavLink";
 
 export default class App extends Component {
   render() {    
@@ -18,11 +17,8 @@ export default class App extends Component {
         <div className="list-group">
           {/* <a className="list-group-item active" href="./about.html">About</a>
           <a className="list-group-item" href="./home.html">Home</a> */}
-          {/* <NavLink activeClassName='demo' to='/about'>我是about</NavLink>
-          <NavLink activeClassName='demo' to='/home'>我是home</NavLink> */}
-          <MyNavLink to="/about" children="about"/> 
-          <MyNavLink to="/home" children="home"/> 
-          <Redirect to="/about"/>
+          <NavLink activeClassName='demo' to='/about'>我是about</NavLink>
+          <NavLink activeClassName='demo' to='/home'>我是home</NavLink>
         </div>
       </div>
       <div className="col-xs-6">
