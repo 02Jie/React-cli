@@ -1,23 +1,36 @@
 import React, { Component } from "react";
-import Search from "./components/Search";
-import List from "./components/List";
+import {NavLink,Route} from 'react-router-dom'
+import About from "./pages/About";
+import Home from "./pages/Home";
+
 export default class App extends Component {
-  //定义一个数组对象接收数据
-  state = {
-    infoArr:[]
-  }
-  handleData = (arr) => { 
-    console.log(arr);
-    this.setState({infoArr:[...arr]})
-  }
-  render() {
-    const { infoArr } = this.state 
+  render() {    
     return (
-        <div className="container">
-        <Search handleData={this.handleData }></Search>
-        <List infoArr={ infoArr }></List>
-        
+      <div>
+    <div className="row">
+      <div className="col-xs-offset-2 col-xs-8">
+        <div className="page-header"><h2>React Router Demo</h2></div>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-xs-2 col-xs-offset-2">
+        <div className="list-group">
+          {/* <a className="list-group-item active" href="./about.html">About</a>
+          <a className="list-group-item" href="./home.html">Home</a> */}
+          <NavLink activeClassName='demo' to='/about'>我是about</NavLink>
+          <NavLink activeClassName='demo' to='/home'>我是home</NavLink>
         </div>
+      </div>
+      <div className="col-xs-6">
+        <div className="panel">
+          <div className="panel-body">
+            <Route path='/about' component={About}></Route>
+            <Route path='/home' component={Home}></Route>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     );
   }
 }
